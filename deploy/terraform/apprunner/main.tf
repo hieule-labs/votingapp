@@ -43,6 +43,7 @@ resource "aws_apprunner_service" "code_example" {
           runtime_environment_variables = {
             DDB_AWS_REGION = var.region
             DDB_TABLE_NAME = module.dynamodb.restaurant_table_name
+            ENV_NAME = var.environment
           }
         }
         configuration_source = "API"
@@ -106,6 +107,7 @@ resource "aws_apprunner_service" "private_ecr_example" {
         runtime_environment_variables = {
           DDB_AWS_REGION = var.region
           DDB_TABLE_NAME = module.dynamodb.restaurant_table_name
+          ENV_NAME = var.environment
         }
       }
 
