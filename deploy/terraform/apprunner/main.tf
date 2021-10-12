@@ -81,7 +81,7 @@ data "aws_iam_policy" "AWSAppRunnerServicePolicyForECRAccess" {
 }
 
 resource "aws_iam_role" "apprunner_role" {
-  name = "apprunner_role"
+  name = "apprunner_role_${var.environment}"
 
   assume_role_policy = data.aws_iam_policy_document.apprunner_policy.json
 }
