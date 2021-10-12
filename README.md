@@ -15,7 +15,7 @@ If you hit the `/` path of the service a summary of the various APIs available i
 
 This is a high level diagram of the application architecture:
 
-![votingapp-architecture](/images/votingapp-architecture.png)  
+![votingapp-architecture](images/votingapp-architecture.svg)  
 
 
 ### How to set up the application
