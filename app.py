@@ -8,7 +8,7 @@ import boto3
 from multiprocessing import Pool
 from multiprocessing import cpu_count
 
-version = "1.0.1"
+version = "1.0.0"
 app = Flask(__name__)
 
 cors = CORS(app, resources={r"/api/*": {"Access-Control-Allow-Origin": "*"}})
