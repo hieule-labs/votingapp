@@ -50,7 +50,7 @@ resource "aws_apprunner_service" "code_example" {
       repository_url = var.github_code_repo_url
       source_code_version {
         type  = "BRANCH"
-        value = "master"
+        value = var.github_code_branch
       }
     }
   }
@@ -89,14 +89,6 @@ resource "aws_iam_role" "apprunner_role" {
 resource "aws_iam_role_policy_attachment" "apprunner_role" {
   role       = aws_iam_role.apprunner_role.name
   policy_arn = data.aws_iam_policy.AWSAppRunnerServicePolicyForECRAccess.arn
-}
-
-resource "aws_apprunner_auto_scaling_configuration_version" "this" {
-  auto_scaling_configuration_name = "apprunner_auto_scaling_${var.environment}"
-
-  max_concurrency = 2
-  max_size        = 2
-  min_size        = 1
 }
 
 resource "aws_apprunner_service" "private_ecr_example" {
